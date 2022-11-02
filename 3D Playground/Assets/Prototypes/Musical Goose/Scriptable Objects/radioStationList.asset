@@ -45,3 +45,4 @@ MonoBehaviour:
     xCoordinateAsFrequency: 190
     radioAudio: {fileID: 8300000, guid: 89c0bdbb50d841d4aa5bb2714a94998d, type: 3}
     hasBeenDiscovered: 0
+  hasChanged: 0

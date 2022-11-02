@@ -25,6 +25,13 @@ public class RadioController : MonoBehaviour
         prepareRadioStations();
     }
 
+    void Update(){
+        if (radioStationList.hasChanged){
+            prepareRadioStations();
+            radioStationList.hasChanged = false;
+        }
+    }
+
     public void playOrPauseAudio(){
         if (playerAudioSource.clip != null) {
             if (playerAudioSource.isPlaying) {
@@ -53,7 +60,7 @@ public class RadioController : MonoBehaviour
 
     public void spoolRadio(GameObject gameObject, float xTarget){
         gameObject.transform.localPosition = new Vector3(xTarget, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
-        RadioStationObject.RadioStationEntry radioStation = findStationByFrequency(xTarget);
+        RadioStationObject.RadioStationEntry radioStation = radioStationList.findStationByFrequency(xTarget);
         if (radioStation != null){
             statusText.SetText(radioStation.radioStationName);
             playerAudioSource.Stop();
@@ -66,6 +73,11 @@ public class RadioController : MonoBehaviour
 
     private void prepareRadioStations()
     {
+        foreach (Transform child in bottomScreen.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
         foreach (var thisStation in radioStations)
         {
             GameObject thisStationLocation = Instantiate(
@@ -78,6 +90,7 @@ public class RadioController : MonoBehaviour
             pointerRect.localPosition = new Vector3(thisStation.xCoordinateAsFrequency, 0, 0);
             pointerRect.offsetMin = new Vector2(pointerRect.offsetMin.x, radioStationLocation.offsetMin.y);
             pointerRect.offsetMax = new Vector2(pointerRect.offsetMax.x, radioStationLocation.offsetMax.y);
+            pointerRect.localScale = new Vector3(1, 1, 1);
 
             if (thisStation.hasBeenDiscovered){
                 thisStationLocation.SetActive(true);
@@ -115,15 +128,5 @@ public class RadioController : MonoBehaviour
         }
 
         return closestValue;
-    }
-
-    private RadioStationObject.RadioStationEntry findStationByFrequency(float frequency){
-        foreach (RadioStationObject.RadioStationEntry stationEntry in radioStations)
-        {
-            if (stationEntry.xCoordinateAsFrequency.Equals(frequency)) {
-                return stationEntry;
-            }
-        }
-        return null;
     }
 }
