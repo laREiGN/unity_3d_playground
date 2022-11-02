@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be479f4ad5db53b45a0636f367be16f2, type: 3}
+  m_Name: radioStationList
+  m_EditorClassIdentifier: 
+  radioStations:
+  - radioStationName: Christmas Jingle
+    xCoordinateAsFrequency: -207
+    radioAudio: {fileID: 8300000, guid: d690e2ab6bfc4374c91882a26c548f0f, type: 3}
+    hasBeenDiscovered: 0
+  - radioStationName: Follower Music
+    xCoordinateAsFrequency: -164
+    radioAudio: {fileID: 8300000, guid: dd8f313911f0b8c4ea564c65ed8b85bf, type: 3}
+    hasBeenDiscovered: 1
+  - radioStationName: Hype Music
+    xCoordinateAsFrequency: -124
+    radioAudio: {fileID: 8300000, guid: 9574a06d17fa1e548b12698965df887c, type: 3}
+    hasBeenDiscovered: 0
+  - radioStationName: Focus Music
+    xCoordinateAsFrequency: -86
+    radioAudio: {fileID: 8300000, guid: 795c02b411339874aa37a7421bc82955, type: 3}
+    hasBeenDiscovered: 0
+  - radioStationName: Sleepy Music
+    xCoordinateAsFrequency: -48
+    radioAudio: {fileID: 8300000, guid: 2430e0131d3f11f4789a950feeb9d66c, type: 3}
+    hasBeenDiscovered: 0
+  - radioStationName: Mischievous Music
+    xCoordinateAsFrequency: 45
+    radioAudio: {fileID: 8300000, guid: 2f84c8d32b4ae0344ad02baecfd6e431, type: 3}
+    hasBeenDiscovered: 0
+  - radioStationName: Rock Music
+    xCoordinateAsFrequency: 129
+    radioAudio: {fileID: 8300000, guid: 04031d069d26e7948894de6380d03741, type: 3}
+    hasBeenDiscovered: 0
+  - radioStationName: Spooky Music
+    xCoordinateAsFrequency: 190
+    radioAudio: {fileID: 8300000, guid: 89c0bdbb50d841d4aa5bb2714a94998d, type: 3}
+    hasBeenDiscovered: 0
