@@ -4,8 +4,30 @@
         {
             "name": "Player",
             "id": "543a97de-c27c-4a57-ada7-86a7fc4867c6",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "Camera Switch",
+                    "type": "Button",
+                    "id": "76a98e21-b21f-4a13-a739-abc66e9c9cfe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "88c2946b-2bc3-4f74-83c5-e78eb71d297a",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Camera Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
