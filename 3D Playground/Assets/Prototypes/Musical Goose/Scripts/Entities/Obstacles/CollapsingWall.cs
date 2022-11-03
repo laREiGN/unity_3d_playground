@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CollapsingWall : MonoBehaviour
 {
+
+    [SerializeField] string radioStationName;
+    [SerializeField] int minimumFollowersNeeded;
     [SerializeField] RadioStationObject radioStationObject;
     private bool canCollapse;
     void Update()
@@ -24,8 +27,8 @@ public class CollapsingWall : MonoBehaviour
     public void collapseCheck(GameObject player){
         AudioSource playerAudio = player.GetComponent<AudioSource>();
         PlayerFollowers playerFollowers = player.GetComponent<PlayerFollowers>();
-        if (playerFollowers.amountOfFollowers() >= 1){
-            if (playerAudio.isPlaying && playerAudio.clip == radioStationObject.findStationByName("Sleepy Music").radioAudio){
+        if (playerFollowers.amountOfFollowers() >= minimumFollowersNeeded){
+            if (playerAudio.isPlaying && playerAudio.clip == radioStationObject.findStationByName(radioStationName).radioAudio){
                 canCollapse = true;
             }
         }
