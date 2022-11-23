@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    public CharacterController characterController;
+    public Rigidbody playerRigidBody;
     public PlayerInput playerInput;
     public Transform playerCamera;
     public float playerSpeed = 6f;
@@ -45,7 +43,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-            characterController.Move(moveDirection.normalized * playerSpeed * Time.deltaTime);
+            playerRigidBody.MovePosition(playerRigidBody.position + moveDirection.normalized * playerSpeed * Time.deltaTime);
         }
     }
 }
